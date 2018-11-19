@@ -1,4 +1,5 @@
 import java.sql.Date;
+@Entity
 
 public class Opiniões {
 	private Integer id;

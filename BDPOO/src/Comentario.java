@@ -60,6 +60,6 @@ public class Comentario {
 		return "Comentario [id=" + id + ", data=" + data + ", horario=" + horario + ", getId()=" + getId()
 				+ ", getData()=" + getData() + ", getHorario()=" + getHorario() + ", hashCode()=" + hashCode()
 				+ ", getClass()=" + getClass() + ", toString()=" + super.toString() + "]";
-	}
+	}                                                                                                                   
 
 }

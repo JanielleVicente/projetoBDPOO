@@ -1,5 +1,8 @@
 
 public class Grupo {
+		@Id
+		
+		
 		private Integer id;
 		private String nome;
 		private String opiniões;
