@@ -1,23 +1,45 @@
+import java.util.ArrayList;
+import java.util.Set;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity	
 public class Tema {
-	private Integer id;
-
-	public Integer getId() {
+@Id
+	private Long id;
+	private Set<Grupo> Tema;
+	public Long getId() {
 		return id;
 	}
-
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
-
+	public ArrayList<Grupo> getTema() {
+		return Tema;
+	}
+	public void setTema(ArrayList<Grupo> tema) {
+		Tema = tema;
+	}
+	@Override
+	public String toString() {
+		return "Tema [id=" + id + ", Tema=" + Tema + ", getId()=" + getId() + ", getTema()=" + getTema()
+				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
+				+ "]";
+	}
+	public Tema(Long id, ArrayList<Grupo> tema) {
+		super();
+		this.id = id;
+		Tema = tema;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((Tema == null) ? 0 : Tema.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -27,6 +49,11 @@ public class Tema {
 		if (getClass() != obj.getClass())
 			return false;
 		Tema other = (Tema) obj;
+		if (Tema == null) {
+			if (other.Tema != null)
+				return false;
+		} else if (!Tema.equals(other.Tema))
+			return false;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -34,11 +61,5 @@ public class Tema {
 			return false;
 		return true;
 	}
-
-	@Override
-	public String toString() {
-		return "Tema [id=" + id + ", getId()=" + getId() + ", hashCode()=" + hashCode() + ", getClass()=" + getClass()
-				+ ", toString()=" + super.toString() + "]";
-	}
-
+	
 }
