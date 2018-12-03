@@ -6,8 +6,4 @@ public interface Chat {
 	public Pessoa criarPessoas(Integer id,Integer numero );
 	public Grupo criarGrupo ( Integer id,String nome,String opiniões);
 	public Tema CriarTema (Integer id);
-	
-	
-
-
 }
