@@ -2,13 +2,20 @@ import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 @Entity
-public class Grupo {
+public class Grupo implements Identificavel {
 	@Id
 	private Long id;
+
 	private String nome;
+	@ManyToMany
+	@JoinColumn(name="id_Opiniões")
 	private Set<Opiniao> opinioes;
+	@ManyToMany
 	private Set<Pessoa> pessoas;
 
 	public Long getId() {
