@@ -5,7 +5,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 
 @Entity 
 public class Tema implements Identificavel {
@@ -25,22 +24,25 @@ public class Tema implements Identificavel {
 		this.id = id;
 	}
 
-	public ArrayList<Grupo> getTema() {
+	public Set<Grupo> getTema() {
 		return Tema;
 	}
 
-	public void setTema(ArrayList<Grupo> tema) {
+	public void setTema(Set<Grupo> tema) {
 		Tema = tema;
 	}
 
 	@Override
 	public String toString() {
-		return "Tema [id=" + id + ", Tema=" + Tema + ", getId()=" + getId() + ", getTema()=" + getTema()
-				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
-				+ "]";
+		return "Tema [id=" + id + ", Tema=" + Tema + "]";
 	}
 
-	public Tema(Long id, ArrayList<Grupo> tema) {
+	public Tema() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Tema(Long id, Set<Grupo> tema) {
 		super();
 		this.id = id;
 		Tema = tema;
